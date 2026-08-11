@@ -64,14 +64,14 @@ class AuthControllers {
       const user = await userServices.findUser(email);
         
       if (!user) {
-        throw new ApiError(404, "User does not Exist");
+        throw new ApiError(401, "Invalid Credentials");
       }
  
     const isPaaswordCorrect = await user.isPasswordCorrect(password);
    
       
       if (!isPaaswordCorrect) {
-        throw new ApiError(401, "Invalid Password");
+        throw new ApiError(401, "Invalid Credentials");
       }
 
       const accessToken = user.generateAccessToken();
