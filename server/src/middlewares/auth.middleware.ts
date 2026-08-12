@@ -21,7 +21,7 @@ const verifyJWT = asyncHandler(async(req:Request,res:Response,next:NextFunction)
         throw new ApiError(404, "Invalid Access Token")
     }
 
-    req.user = user
+    req.user = {id:user._id}
     next()
 })
 

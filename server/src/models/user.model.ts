@@ -1,10 +1,9 @@
-import { Schema, model, Model } from "mongoose";
+import { Schema, model } from "mongoose";
 import bcrypt from "bcryptjs";
-import type {IUser, IUserMethods} from "../types/user.types.js"
+import type {IUser, IUserMethods, UserModel} from "../types/user.types.js"
 import envVariables from "../constants/constants.js";
 import jwt from 'jsonwebtoken'
 
-type UserModel = Model<IUser,{},IUserMethods>
 
 const userSchema = new Schema<IUser,UserModel,IUserMethods>({
     username: { type: String, required: true, unique: true, trim: true,index:true },

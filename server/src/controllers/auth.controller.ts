@@ -9,7 +9,7 @@ import type {
 } from "../types/auth.types.js";
 import userServices from "../services/user.services.js"; 
 import type { ApiResponse } from "../types/apiResponse.types.js";
-import User from "../models/user.model.js";
+ 
 
 class AuthControllers {
   register = asyncHandler(
