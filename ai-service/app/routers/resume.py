@@ -28,6 +28,7 @@ ALLOWED_CONTENT_TYPES = {
 async def parse_resume_endoint(
     file:UploadFile = File(...)
 )-> ResumeParseRespose:
+    
     extension = Path(file.filename or "").suffix.lower()
 
     if extension not in ALLOWED_EXTENTIONS:

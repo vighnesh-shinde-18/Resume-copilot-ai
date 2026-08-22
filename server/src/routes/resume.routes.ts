@@ -12,7 +12,7 @@ router.use(verifyJWT)
 router.post("/",
     uploadResume.single("resume"),resumeController.uploadResume
 )
-
 router.get("/",resumeController.getMyResumes);
+router.get("/:resumeId/parse-status",resumeController.parseStatus);
 
 export default router;

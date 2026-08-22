@@ -30,7 +30,22 @@ const resumeSchema = new Schema<IResume>({
     path:{
         type:String,
         required:true
+    },
+    parseStatus:{
+        type:String,
+        enum:["pending", "processing", "completed", "failed"],
+        default:"pending",
+        index:true
+    },
+    parsedText:{
+        type:String,
+        required:false
+    },
+    parseError:{
+        type:String,
+        required:false
     }
+
 }, {timestamps:true})
 
 const Resume = model<IResume>('Resume', resumeSchema)

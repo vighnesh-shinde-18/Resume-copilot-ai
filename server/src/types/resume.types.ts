@@ -7,6 +7,9 @@ export interface IResume extends Document{
     mimeType : string;
     size:number;
     path:string;
+    parseStatus:"pending" | "processing" | "completed" | "failed";
+    parsedText?:string;
+    parseError?:string;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -16,7 +19,7 @@ export interface UploadResumeBody{
     storedName:string;
     mimeType:string;
     size:number;
-    path:string;
+    path:string; 
 }
 export interface UploadResumeResponse{
     id:string;
